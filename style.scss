@@ -91,6 +91,7 @@ body {
 
         & p {
             margin-bottom: 45px;
+            margin-right: 10%;
             line-height: 2;
             color: $color-paragraph;
         }
@@ -98,12 +99,13 @@ body {
         & .stats {
             @media screen and (min-width: $horizontal) {
                 display: flex;
-                justify-content: space-between;
-                margin-right: 20%;
             }
 
             & .stat {
                 margin-top: 30px;
+                @media screen and (min-width: $horizontal) {
+                    margin-right: 50px;
+                }
                 & .number {
                     font-size: 1.6rem;
                     color: $color-heading;

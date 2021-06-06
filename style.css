@@ -83,18 +83,22 @@ body {
 }
 .card .content p {
   margin-bottom: 45px;
+  margin-right: 10%;
   line-height: 2;
   color: rgba(255, 255, 255, 0.75);
 }
 @media screen and (min-width: 1300px) {
   .card .content .stats {
     display: flex;
-    justify-content: space-between;
-    margin-right: 20%;
   }
 }
 .card .content .stats .stat {
   margin-top: 30px;
+}
+@media screen and (min-width: 1300px) {
+  .card .content .stats .stat {
+    margin-right: 50px;
+  }
 }
 .card .content .stats .stat .number {
   font-size: 1.6rem;
