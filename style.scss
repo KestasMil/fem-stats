@@ -1,0 +1,122 @@
+// Colors
+$color-background: hsl(233, 47%, 7%);
+$color-card-background: hsl(244, 38%, 16%);
+$color-accent: hsl(277, 64%, 61%);
+$color-heading: hsl(0, 0%, 100%);
+$color-paragraph: hsla(0, 0%, 100%, 0.75);
+$color-stat: hsla(0, 0%, 100%, 0.6);
+
+// Breakpoints
+$horizontal: 1100px;
+
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4%;
+    background-color: $color-background;
+    @media screen and (min-width: $horizontal) {
+        padding: 12% 10% 10% 10%;
+    }
+}
+
+.card {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: $color-card-background;
+
+    @media screen and (min-width: $horizontal) {
+        flex-direction: row-reverse;
+    }
+
+    & .image {
+        aspect-ratio: 1.3625;
+        background: #ffffff url("images/image-header-mobile.jpg") no-repeat right top;
+        background-size: cover;
+
+        @media screen and (min-width: $horizontal) {
+            height: auto;
+            min-width: 540px;
+        }
+        
+        position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: hsl(280deg 100% 30% / 50%);
+               }
+
+        & picture img {
+            width: 100%;
+        }
+
+        @media screen and (min-width: $horizontal) {
+            background-image: url("images/image-header-desktop.jpg");
+        }
+    }
+
+    & .content {
+        text-align: center;
+        padding: 30px;
+
+        @media screen and (min-width: $horizontal) {
+            padding: 70px 100px 70px 70px;
+        }
+
+        @media screen and (min-width: $horizontal) {
+            text-align: left;
+        }
+
+        & .title {
+            color: $color-heading;
+            font-size: 1.8rem;
+            font-weight: 600;
+
+            @media screen and (min-width: $horizontal) {
+                font-size: 2.15rem;
+            }
+
+            & span {
+                color: $color-accent;
+            }
+        }
+
+        & p {
+            margin-bottom: 45px;
+            line-height: 2;
+            color: $color-paragraph;
+        }
+
+        & .stats {
+            @media screen and (min-width: $horizontal) {
+                display: flex;
+                justify-content: space-between;
+                margin-right: 20%;
+            }
+
+            & .stat {
+                margin-top: 30px;
+                & .number {
+                    font-size: 1.6rem;
+                    color: $color-heading;
+                    margin-bottom: 5px;
+                    font-weight: 600;
+                }
+                & .caption {
+                    font-family: 'Lexend Deca', sans-serif;
+                    font-size: 0.85rem;
+                    color: $color-stat;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
